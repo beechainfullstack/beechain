@@ -1,0 +1,52 @@
+
+body {
+    background-color: #0C0014;
+    color: #EDF5FC;
+    font-family: 'Space Mono';
+    line-height: 2;
+    letter-spacing: 0.025em;
+}
+.header{
+    text-align:center;
+
+}
+code {
+    color: #84DD63;
+}
+:any-link{
+    color: #98473E;
+    text-decoration: none;
+}
+ul{
+    text-indent: 7.5%;
+}
+li{
+    list-style: none;
+    text-indent: 15%;
+}
+h3{
+
+}
+h2{
+    color: #A39BA8;
+}
+h1{
+    
+}
+.presence h2, p{
+    display:inline;  
+}
+.projects h2, p{
+    display:inline;  
+}
+.about h2, p{
+    display: inline;
+    
+}
+div{
+    margin: 2% auto;
+}
+#bio{
+    
+
+}
