@@ -25,7 +25,9 @@
             <li><a href="https://gptunes.vercel.app/">🎶 &nbsp;GPTunes - AI-generated chord progressions!</a></li>
         </ul>
     </div>
-    
+    <li>Python: <code id="timeElapsed1"></code></li>
+    <li>Javascript/Typescript: <code id="timeElapsed2"></code></li>
+    <li>Java: <code id="timeElapsed3"></code></li>
     <div class="presence">
         <ul><p><h2>Presence</h2> &nbsp; &nbsp; &nbsp; 📲Check me out!</p></ul>
             <li><a href="https://soundcloud.com/smrtka"> ☁️ &nbsp;soundcloud</li>
@@ -39,6 +41,28 @@
     <li>⟠ ETH/ERC-20 (QR): <code>0x950cab0bf5b6ae2fc1224d13fe3d7de40b113634</code></li>
     <li>Ξ ENS: <code>beechain.eth</code></li> 
     <li>₿ BTC (QR): <code>bc1q6utrcpwquzuu5rm6zd6suc4ewsjcdhy6eujzh9</code></li>
+    <script>
+        function getTimeElapsed(startDate) {
+          const elapsedMs = new Date() - startDate;
+          return elapsedMs;
+        }
+      
+        function updateTimeElapsed(startDate, outputId) {
+          const timeElapsedMs = getTimeElapsed(startDate);
+          const timeElapsedYrs = timeElapsedMs / (1000 * 60 * 60 * 24 * 365.25);
+          const formattedTimeElapsed = timeElapsedYrs.toFixed(8);
+          document.getElementById(outputId).textContent = `${formattedTimeElapsed} yrs`;
+        }
+      
+        const startDate1 = new Date("September 1, 2020 00:00:00");
+        setInterval(() => updateTimeElapsed(startDate1, "timeElapsed1"), 100);
+      
+        const startDate2 = new Date("December 1, 2022 00:00:00");
+        setInterval(() => updateTimeElapsed(startDate2, "timeElapsed2"), 100);
+
+        const startDate3 = new Date("March 1, 2023 00:00:00");
+        setInterval(() => updateTimeElapsed(startDate3, "timeElapsed3"), 100);
+      </script>
 </body>
 
 </html>
