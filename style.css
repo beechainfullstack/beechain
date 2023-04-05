@@ -55,20 +55,15 @@ div{
   overflow: hidden;
   height: 40px;
   padding: 0 40px; 
-  position: relative;
   margin: auto;
 }
 .content__container__text {
-  display: inline;
   float: left;
   margin: 0; 
-  padding-right: 90px;
 }  
 .content__container__list {
   margin-top: 0;
-  margin-left: 150px;
-  padding-right: 100px;
-  text-align: left;
+  margin-left: 50px;
   list-style: none;
   -webkit-animation-name: change;
   -webkit-animation-duration: 10s;
