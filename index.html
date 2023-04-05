@@ -6,41 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>beechain site</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.jfif">
-    <link rel="stylesheet" type="text/css" href="style.css">  <import style="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="header">
-        <h1 class="title">beechain</h1>
-        <h2 class="change">fullstack creator, developer, memer</h2>
+  <header>
+        <div class="content"  style="position: fixed;">
+          <div class="content__container">
+            <p class="content__container__text">
+              beechainfullstack
+            </p>
+            <ul class="content__container__list">
+              <li class="content__container__list__item">developer</li>
+              <li class="content__container__list__item">creator</li>
+              <li class="content__container__list__item">memer</li>
+            </ul>
+          </div>
+        </div>
+      </header>
+        <nav class="navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <!--ABOUT TO START: ABOUT PAGE/PROJECTS/EXP-->
+        <div class="about">
+          <ul class="ul-div-el" style="text-align: center; margin-right: 20%;"><h2>👋🤓 Thanks for stopping by!</h2>
+              <li class="div-el" id="bio">I'm Bee! Please browse around to learn about me!</li>
+          </ul>
+    <br>
+    <div class="iframe-container">
+      <iframe width="50%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/870246358&color=%236dc548&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+    </div>    
+    <div class="contain-list">
+      <ul class="codelist">
+        <li class="coding">Python<br> <code id="timeElapsed1"></code></li>
+        <li class="coding">Javascript/Typescript<br> <code id="timeElapsed2"></code></li>
+        <li class="coding">Java<br> <code id="timeElapsed3"></code></li>
+      </ul>
     </div>
-    <div class="about">
-        <ul><p><h2>About</h2>&nbsp; &nbsp; &nbsp; 📜The Lore</p>
-            <li id="bio">👋🤓 Glad you're here - I'm Bee! Leveling up as a developer while contributing to ethereum events & communities.</li>
-    
+    <div class="button-container">
+        <input type="button" value="Let's Chat! 📅" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beechain'});return false;">
+    </div>
+
+
     </div>
     <div class="projects">
-        <ul><p><h2>Projects</h2>&nbsp; &nbsp; &nbsp; 👷BUIDLin'</p></ul>
-            <li><a href="https://beechain.vercel.app">🌐 &nbsp;this website! (more TBA...👀)</a></li>
-            <li><a href="https://gptunes.vercel.app/">🎶 &nbsp;GPTunes - AI-generated chord progressions!</a></li>
+        <ul class="ul-div-el"><p><h2>Projects</h2>&nbsp; &nbsp; &nbsp; 👷BUIDLin'</p></ul>
+            <li class="div-el"><a href="https://beechain.vercel.app">🌐 &nbsp;this website! (more TBA...👀)</a></li>
+            <li class="div-el"><a href="https://gptunes.vercel.app/">🎶 &nbsp;GPTunes - AI-generated chord progressions!</a></li>
         </ul>
     </div>
-    <li>Python: <code id="timeElapsed1"></code></li>
-    <li>Javascript/Typescript: <code id="timeElapsed2"></code></li>
-    <li>Java: <code id="timeElapsed3"></code></li>
+
     <div class="presence">
-        <ul><p><h2>Presence</h2> &nbsp; &nbsp; &nbsp; 📲Check me out!</p></ul>
-            <li><a href="https://soundcloud.com/smrtka"> ☁️ &nbsp;soundcloud</li>
-            <li><a href="https://github.com/beechainfullstack">😼 &nbsp;github</a></li>
-            <li><a href="https://twitter.com/beechainstack"> 🐣 &nbsp;twitter</a></li>
-            <li><a href="https://gallery.so/beechain">🖼️ &nbsp;gallery</a></li>
-            <li><a href="">📡 &nbsp;RSS</a></li>
+        <ul class="ul-div-el"><p><h2>Presence</h2> &nbsp; &nbsp; &nbsp; 📲Check me out!</p></ul>
+            <li class="div-el"><a href="https://soundcloud.com/smrtka"> ☁️ &nbsp;soundcloud</li>
+            <li class="div-el"><a href="https://github.com/beechainfullstack">😼 &nbsp;github</a></li>
+            <li class="div-el"><a href="https://twitter.com/beechainstack"> 🐣 &nbsp;twitter</a></li>
+            <li class="div-el"><a href="https://gallery.so/beechain">🖼️ &nbsp;gallery</a></li>
         </ul>
     </div>
-    <ul>🙏donations <em><strong>greatly</strong></em> appreciated - thanks for supporting!</ul>
-    <li>⟠ ETH/ERC-20 (QR): <code>0x950cab0bf5b6ae2fc1224d13fe3d7de40b113634</code></li>
-    <li>Ξ ENS: <code>beechain.eth</code></li> 
-    <li>₿ BTC (QR): <code>bc1q6utrcpwquzuu5rm6zd6suc4ewsjcdhy6eujzh9</code></li>
+    <ul class="ul-div-el">🙏donations <em><strong>greatly</strong></em> appreciated - thanks for supporting!
+    <li  class="div-el">⟠ ETH/ERC-20 (QR): <code>0x950cab0bf5b6ae2fc1224d13fe3d7de40b113634</code></li>
+    <li class="div-el">Ξ ENS: <code>beechain.eth</code></li> 
+    <li class="div-el">₿ BTC (QR): <code>bc1q6utrcpwquzuu5rm6zd6suc4ewsjcdhy6eujzh9</code></li>
+  </ul>
     <script>
         function getTimeElapsed(startDate) {
           const elapsedMs = new Date() - startDate;
@@ -62,7 +106,25 @@
 
         const startDate3 = new Date("March 1, 2023 00:00:00");
         setInterval(() => updateTimeElapsed(startDate3, "timeElapsed3"), 100);
+        const timeslot = document.querySelector('.timeslot');
+      const words = ['developer', 'creator', 'memer'];
+
+      function updateTimeslot() {
+      const listItems = timeslot.querySelectorAll('li');
+      const numItems = listItems.length;
+  
+  // shift the list up by one and update the content of the last item
+      for (let i = 0; i < numItems - 1; i++) {
+        listItems[i].textContent = listItems[i + 1].textContent;
+      }
+      listItems[numItems - 1].textContent = words[Math.floor(Math.random() * words.length)];
+}
+
+    // update the timeslot every 2 seconds
+    setInterval(updateTimeslot, 2000);
+      
       </script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 
 </html>
