@@ -60,10 +60,12 @@ div{
 .content__container__text {
   float: left;
   margin: 0; 
+  padding-right: 90px;
 }  
 .content__container__list {
   margin-top: 0;
-  margin-left: 50px;
+  margin-left: 150px;
+  padding-right: 100px;
   list-style: none;
   -webkit-animation-name: change;
   -webkit-animation-duration: 10s;
