@@ -16,7 +16,8 @@ code {
     text-decoration: none;
 }
 .ul-div-el{
-    text-indent: 7.5%;
+  text-align: center; 
+  margin-right: 20%;
 }
 .div-el{
     list-style: none;
@@ -47,22 +48,25 @@ h2{
 .content__container {
   font-weight: 500;
   overflow: hidden;
-  height: 40px; /* Updated height to match line-height */
+  height: 40px;
   margin: auto;
   
 }
 
 .content__container__list {
   list-style: none;
-  animation-name: change; /* Removed vendor prefixes */
+  animation-name: change;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   padding-right:40px;
   overflow:hidden;
   padding-bottom: 20px;
+  margin-top: 0;
 
 }
-
+header h1{
+  margin-bottom: 10px;
+}
 .content__container__list__item {
   line-height: 40px;
 }
@@ -88,7 +92,6 @@ input[type=button] {
   cursor: pointer;
 }
 
-/* Add hover effect */
 input[type=button]:hover {
   background-color: #6DC548;
 }
@@ -111,28 +114,27 @@ input[type=button]:hover {
   display: flex;
   list-style: none;
   padding: 0;
-  justify-content: center; /* Change from space-between to center */
+  justify-content: center;
   align-items: center;
   width: 50%;
-  text-align: center; /* Add text-align property */
-
+  text-align: center;
 }
 
 .coding {
-  text-align: center; /* Center the content within each <li> element */
-  white-space: pre-wrap; /* Make the content wrap onto a new line */
+  text-align: center;
+  white-space: pre-wrap;
   margin: 0 20px;
   flex: 1;
 }
 
 #timeElapsed1, #timeElapsed2, #timeElapsed3 {
   font-family: monospace;
-  text-align: center; /* Add text-align property */
+  text-align: center;
 }
 
 .navbar {
   padding: 10px;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .navbar-nav {
@@ -140,13 +142,14 @@ input[type=button]:hover {
   justify-content: center;
   list-style: none;
   margin: 0;
+  padding-left: 40px;
   padding-right: 40px;
 
 }
 
 .nav-item {
   position: relative;
-  text-align: center; /* center the text within the nav item */
+  text-align: center;
   flex-basis: 20%;
 }
 @media (max-width: 768px) {
@@ -162,10 +165,10 @@ input[type=button]:hover {
   }
 }
 .nav-link {
-  display: inline-block; /* make the link a block element so we can set width and height */
+  display: inline-block;
   text-decoration: none;
   font-size: 16px;
-  box-sizing: border-box; /* include padding in width and height */
+  box-sizing: border-box;
   text-align: center;
 }
 
