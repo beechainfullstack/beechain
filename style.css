@@ -35,6 +35,7 @@ h2{
 .about .nextToTypewrite,
 .about .typewrite {
   display: inline-block;
+  font-size: 1em;
 }
 .about{
   text-align: center;
