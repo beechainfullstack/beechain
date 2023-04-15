@@ -45,15 +45,16 @@ h2{
 }
 .about{
   display: flex;
-  margin: 0  auto;
   margin-top: 20px;
+  align-items: center;
+  justify-content: center;
 }
-
+.typewrite{
+  margin-left: 10px
+}
 .about h3{
   text-align: center; 
-  margin: 0 auto;
   font-size: 1.25em;
-  width: 90%;
 }
 
 .main_portion, p{
