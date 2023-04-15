@@ -34,7 +34,8 @@ h2{
 }
 .about .nextToTypewrite,
 .about .typewrite {
-  display: inline-block;
+  display: flex;
+  justify-content: space-evenly;
   font-size: 1em;
 }
 @media (max-width: 375px) {
@@ -43,14 +44,24 @@ h2{
   }
 }
 .about{
-  margin-left: 41%;
-
+  display: flex;
+  margin: 0  auto;
+  margin-top: 20px;
 }
-.main_portion, .about h2, p{
+
+.about h3{
+  text-align: center; 
+  margin: 0 auto;
+  font-size: 1.25em;
+  width: 90%;
+}
+
+.main_portion, p{
     text-align: center; 
-    margin: 0;
+    margin: 0 auto;
     margin-bottom: 20px;
     font-size: 1.25em;
+    width: 90%;
 }
 
 .content {
