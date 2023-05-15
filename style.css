@@ -15,29 +15,12 @@ code {
     color: #98473E;
     text-decoration: none;
 }
-.ul-div-el{
-  text-align: center; 
-  margin-right: 20%;
-}
-.div-el{
-    list-style: none;
-    text-indent: 15%;
-}
+
 h2{
     color: #A39BA8;
 }
-.presence h2, p{
-    display:inline;  
-}
-.projects h2, p{
-    display:inline;  
-}
-.about .nextToTypewrite,
-.about .typewrite {
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 1em;
-}
+
+
 @media (max-width: 375px) {
   .about{
     margin-left: 15%;
@@ -133,10 +116,7 @@ input[type=button]:hover {
   margin-top: 10px;
   z-index: 999;
 }
-.iframe-container {
-  display: flex;
-  justify-content: center;
-}
+
 .contain-list {
   display: flex;
   justify-content: space-evenly;
@@ -252,10 +232,6 @@ html {
   text-transform: lowercase;
 }
 
-span {
-  border-right: .05em solid;
-  animation: caret 1s steps(1) infinite;
-}
 
 @keyframes caret {
   50% {
