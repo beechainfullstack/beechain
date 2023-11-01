@@ -245,3 +245,21 @@ html {
   width: 200px;
   margin: 0 auto;
 }
+
+.portfolio{
+  display: block; 
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the items horizontally */
+}
+
+.portfolio-item {
+  width: 150px; /* Adjust the width as needed */
+  margin: 10px; /* Adjust the margin as needed to control spacing */
+}
