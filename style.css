@@ -260,6 +260,11 @@ html {
 }
 
 .portfolio-item {
-  width: 150px; /* Adjust the width as needed */
-  margin: 10px; /* Adjust the margin as needed to control spacing */
+  width: 200px; /* Adjust the width as needed */
+  margin: 20px; /* Adjust the margin as needed to control spacing */
+}
+
+.portfolio-item:hover {
+  opacity: 0.8;
+  transition: opacity 0.001s ease;
 }
