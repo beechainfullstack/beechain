@@ -295,3 +295,13 @@ html {
   text-align: left;
 
 }
+@media (max-width: 768px) {
+  .portfolio-item {
+    width: 380px; 
+  }
+}
+@media (max-width: 375px) {
+  .portfolio-item {
+    width: 350px; 
+  }
+}
