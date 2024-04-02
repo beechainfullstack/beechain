@@ -305,3 +305,9 @@ html {
     width: 350px; 
   }
 }
+
+.audio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
