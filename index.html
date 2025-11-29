@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>beechainfullstack - Developer & Designer</title>
+    <title>beechain site</title>
     <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.jfif">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -12,73 +12,59 @@
 <body>
   <header>
     <h1>beechainfullstack</h1>
-    <div class="content">
-      <ul class="content__container__list">
-        <li class="content__container__list__item">developer</li>
-        <li class="content__container__list__item">creator</li>
-        <li class="content__container__list__item">designer</li>
-        <li class="content__container__list__item">innovator</li>
-      </ul>
-    </div>
+      <div class="content">
+        <ul class="content__container__list">
+          <li class="content__container__list__item">developer</li>
+          <li class="content__container__list__item">creator</li>
+          <li class="content__container__list__item">designer</li>
+          <li class="content__container__list__item">memer</li>
+        </ul>
+      </div>
   </header>
-
-  <nav class="navbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a href="#" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="Bee%20Brower%20Resume.pdf" class="nav-link">Resume</a>
-      </li>
-      <li class="nav-item">
-        <a href="portfolio.html" class="nav-link">Portfolio</a>
-      </li>
-      <li class="nav-item">
-        <a href="mailto:bebrower@gmail.com" class="nav-link">Contact</a>
-      </li>
-    </ul>
-  </nav>
-
-  <main class="glass-panel">
-    <h2 class="main_portion">Welcome! Thanks for stopping by.</h2>
-    
-    <div class="bee-container">
-      <img src="imgs/beebiz.jpg" class="bee" alt="Bee's Profile">
-    </div>
-    
-    <div class="about">
-      <h3 class="nextToTypewrite">I'm Bee - I build</h3>
-      <h3 class="typewrite"></h3>
-    </div>
-
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item" onclick="location.href='Bee%20Brower%20Resume.pdf'">
+            <a href="Bee%20Brower%20Resume.pdf" class="nav-link">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a href="mailto:bebrower@gmail.com" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <h2 class="main_portion">👋🤓 Thanks for visiting!</h2>
+      <img src="imgs/beebiz.jpg" class="bee">
+        <div class="about">
+            <h3 class="nextToTypewrite">I'm Bee - I build</h3>
+            <h3 class="typewrite"></h3>
+        </div>
     <div class="contain-list">
       <ul class="codelist">
-        <li class="coding">Python<br><code id="timeElapsed1"></code></li>
-        <li class="coding">Javascript<br><code id="timeElapsed2"></code></li>
-        <li class="coding">Photoshop<br><code id="timeElapsed3"></code></li>
+        <li class="coding">Python<br> <code id="timeElapsed1"></code></li>
+        <li class="coding">Javascript<br> <code id="timeElapsed2"></code></li>
+        <li class="coding">Photoshop<br> <code id="timeElapsed3"></code></li>
       </ul>
     </div>
-
     <div class="button-container">
-      <input type="button" value="Schedule a Call" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beechain'});return false;">
+    <br>
+        <input type="button" value="Let's Talk! 📅" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beechain'});return false;">
     </div>
-  </main>
-
-  <div class="audio-container">
+    <br>
+    <br>
+    <div class="audio-container">
     <audio controls>
       <source src="imgs/beechain.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
-  </div>
-
-  <footer>
-    <p>beechainfullstack &copy; 2024 - 2026</p>
-  </footer>
-
-  <!-- Frutiger Aero grass decoration -->
-  <div class="grass-decoration"></div>
-
-  <script src="scripts.js"></script>
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    </div>
+    <br>
+    <script src="scripts.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
+
 </html>
