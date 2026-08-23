@@ -4,67 +4,140 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>beechain site</title>
+    <title>Bee Brower | Cognitive Scientist & Product Strategist</title>
     <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.jfif">
+    
+    <!-- Google Fonts: Nunito for friendly, humanist sans-serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>beechainfullstack</h1>
-      <div class="content">
-        <ul class="content__container__list">
-          <li class="content__container__list__item">developer</li>
-          <li class="content__container__list__item">creator</li>
-          <li class="content__container__list__item">designer</li>
-          <li class="content__container__list__item">memer</li>
-        </ul>
-      </div>
-  </header>
-      <nav class="navbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="#" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item" onclick="location.href='Bee%20Brower%20Resume.pdf'">
-            <a href="Bee%20Brower%20Resume.pdf" class="nav-link">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a href="portfolio.html" class="nav-link">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a href="mailto:bebrower@gmail.com" class="nav-link">Contact</a>
-          </li>
-        </ul>
-      </nav>
-      <h2 class="main_portion">👋🤓 Thanks for visiting!</h2>
-      <img src="imgs/beebiz.jpg" class="bee">
-        <div class="about">
-            <h3 class="nextToTypewrite">I'm Bee - I build</h3>
-            <h3 class="typewrite"></h3>
+    <!-- 
+    ================================================================
+    F R U T I G E R   A E R O   H E A D E R
+    Glossy, bubbly header with gradient background
+    ================================================================
+    -->
+    <header class="glass-header">
+        <div class="header-content">
+            <!-- Headshot placeholder - replace src with your actual headshot -->
+            <div class="headshot-container">
+                <img src="imgs/seoul pfp v2.png" alt="Bee Brower" class="headshot">
+            </div>
+            
+            <h1 class="main-title">Bee Brower</h1>
+            
+            <!-- LinkedIn Headline -->
+            <p class="headline">
+                Cognitive Scientist. Applied to Product / Event Strategy & Design. Recognized Ethereum Contributor.
+            </p>
         </div>
-    <div class="contain-list">
-      <ul class="codelist">
-        <li class="coding">Python<br> <code id="timeElapsed1"></code></li>
-        <li class="coding">Javascript<br> <code id="timeElapsed2"></code></li>
-        <li class="coding">Photoshop<br> <code id="timeElapsed3"></code></li>
-      </ul>
-    </div>
-    <div class="button-container">
-    <br>
-        <input type="button" value="Let's Talk! 📅" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beechain'});return false;">
-    </div>
-    <br>
-    <br>
-    <div class="audio-container">
-    <audio controls>
-      <source src="imgs/beechain.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    </div>
-    <br>
+    </header>
+
+    <!-- 
+    ================================================================
+    N A V I G A T I O N
+    Pill-shaped, glassmorphic navigation
+    ================================================================
+    -->
+    <nav class="navbar-glass">
+        <ul class="nav-pills">
+            <li class="nav-pill-item">
+                <a href="#" class="nav-pill-link">Home</a>
+            </li>
+            <li class="nav-pill-item">
+                <a href="Bee%20Brower%20Resume.pdf" class="nav-pill-link">Resume</a>
+            </li>
+            <li class="nav-pill-item">
+                <a href="portfolio.html" class="nav-pill-link">Portfolio</a>
+            </li>
+            <li class="nav-pill-item">
+                <a href="mailto:bebrower@gmail.com" class="nav-pill-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 
+    ================================================================
+    M A I N   C O N T E N T
+    Warm, relational about section
+    ================================================================
+    -->
+    <main class="main-content">
+        
+        <!-- Welcome Message -->
+        <section class="welcome-section glass-card">
+            <h2 class="welcome-title">👋 Thanks for visiting!</h2>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section glass-card">
+            <h3 class="about-heading">Forget my job titles, recognize the work.</h3>
+            <div class="about-content">
+                <p>
+                    Whether you're my boss, peer, or student - I respect everyone and respond to reality. 
+                    From ideation to execution, I design products, marketing campaigns, corporate events, 
+                    and technical curriculum. Small teams built my career, big ambitions inspire it. 
+                    Show me your idea's worth, and I'll bring us excellence - together.
+                </p>
+                <p class="poetry-note">
+                    <em>In the AI age, poetry and prose resonates the most with humans, whilst befuddling LLMs. 
+                    Appreciate someone who can do it all :)</em>
+                </p>
+            </div>
+        </section>
+
+        <!-- 
+        ================================================================
+        L I V I N G   C O U N T E R
+        Dynamic, ticking counter - replaces rigid skill bars
+        ================================================================
+        -->
+        <section class="counter-section glass-card">
+            <h3 class="counter-heading">Time Well Spent</h3>
+            <p class="counter-description">
+                Every second is a moment of curiosity. Thank you for being here.
+            </p>
+            <div class="living-counter">
+                <span id="secondsCounter" class="counter-number">0</span>
+                <span class="counter-label">curious seconds</span>
+            </div>
+            <p class="counter-message">You've spent <span id="displaySeconds">0</span> curious seconds here, thank you for every one.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section glass-card">
+            <h3 class="contact-heading">Let's Connect</h3>
+            <div class="contact-links">
+                <a href="mailto:bebrower@gmail.com" class="contact-link glass-button">
+                    📧 bebrower@gmail.com
+                </a>
+                <a href="https://beechain.xyz" class="contact-link glass-button">
+                    🌐 beechain.xyz
+                </a>
+            </div>
+            <div class="button-container">
+                <input type="button" value="Let's Talk! 📅" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beechain'});return false;" class="cta-button">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 
+    ================================================================
+    F O O T E R
+    Simple, clean footer
+    ================================================================
+    -->
+    <footer class="glass-footer">
+        <p>&copy; <span id="currentYear"></span> Bee Brower. Crafted with care.</p>
+    </footer>
+
     <script src="scripts.js"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
-
 </html>
