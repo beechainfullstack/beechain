@@ -4,8 +4,7 @@
  * =====================================================================
  * 
  * This script implements a dynamic, ticking counter that updates every second
- * to symbolize ongoing, living practice - replacing rigid skill bars with
- * something deeply human and process-oriented.
+ * to symbolize ongoing, living practice - like time flowing like water.
  * 
  * CUSTOMIZATION:
  * - Change the starting number by modifying STARTING_SECONDS below
@@ -114,6 +113,37 @@ function updateFooterYear() {
 }
 
 // ================================================================
+// S C R O L L   R E V E A L   A N I M A T I O N
+// ================================================================
+
+/**
+ * Initialize scroll reveal animations for cards
+ * Cards fade in and lift as they enter the viewport
+ */
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    
+    if (!revealElements.length) return;
+    
+    // Create intersection observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                // Optionally unobserve after revealing
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    // Observe all reveal elements
+    revealElements.forEach(el => observer.observe(el));
+}
+
+// ================================================================
 // I N I T I A L I Z A T I O N
 // ================================================================
 
@@ -127,8 +157,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update footer year
     updateFooterYear();
     
+    // Initialize scroll reveal animations
+    initScrollReveal();
+    
     // Log initialization
-    console.log('🌿 Beechain website initialized with Frutiger Aero styles');
+    console.log('✦ Esoteric Void website initialized');
     console.log('⏱ Living counter started at ' + STARTING_SECONDS + ' seconds');
 });
 
