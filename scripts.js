@@ -164,3 +164,19 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('✦ Esoteric Void website initialized');
     console.log('⏱ Living counter started at ' + STARTING_SECONDS + ' seconds');
 });
+
+/**
+ * Optional: Add subtle scroll-based animations for glass cards
+ * This creates a gentle parallax effect as users scroll
+ */
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const cards = document.querySelectorAll('.glass-card');
+    
+    cards.forEach((card, index) => {
+        const speed = 0.1 + (index * 0.02);
+        const offset = scrolled * speed;
+        // Subtle lift effect on scroll
+        card.style.transform = `translateY(${Math.min(offset, 20)}px)`;
+    });
+}, { passive: true });
