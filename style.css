@@ -1,74 +1,83 @@
 /* 
 ================================================================
-E S O T E R I C   V O I D   S T Y L E S
-Dark, contemplative design inspired by:
-- Eastern Chinese ink wash painting (留白 - negative space)
-- Jade and gold leaf accents
-- Mist and void aesthetics
-- Dante's Divine Comedy (journey through darkness to light)
+P R O F E S S I O N A L   V O I D   S T Y L E S
+Sophisticated dark aesthetic synthesizing:
+- Eastern philosophy (ink wash, jade, gold, void, mist)
+- Western poetic tradition (Dante, classical elegance)
+- Modern minimalism (clean lines, generous whitespace)
 ================================================================
 
-COLOR PALETTE (Customizable):
-- Void Black: #0a0c10 (deep darkness)
-- Ink Wash: #1a1f28 (layered depth)
-- Gold Leaf: #d4af37 (precious accent)
-- Jade Green: #5d9c59 (life, growth)
-- Mist Gray: #6b7280 (ethereal transitions)
-- Paper White: #e5e7eb (subtle illumination)
+COLOR PALETTE (Customizable via CSS variables):
+- Void Black: #0a0c10 (primary background)
+- Deep Void: #050608 (footer, deepest shadows)
+- Charcoal: #1a1f28 (cards, elevated surfaces)
+- Gold Leaf: #d4af37 (precious accents, counters)
+- Jade: #5d9c59 (life force, hover states)
+- Mist: #6b7280 (secondary text)
+- Paper: #e5e7eb (primary text)
 
 TYPOGRAPHY:
-- Noto Serif: Classical, poetic elegance (headings)
-- Nunito: Clean readability (body text)
+- Noto Serif: Classical headings, poetic moments
+- Inter: Modern body text, exceptional readability
 */
 
 /* ================================================================
    R O O T   V A R I A B L E S
-   Easy to customize colors and spacing
+   Customize colors, spacing, and timing here
 ================================================================ */
 :root {
-    /* Esoteric Void Color Palette */
-    --void-900: #050608;           /* Deepest void */
-    --void-800: #0a0c10;           /* Primary background */
-    --void-700: #11141a;           /* Card backgrounds */
-    --void-600: #1a1f28;           /* Elevated surfaces */
+    /* Void Blacks - layered depth */
+    --void-deep: #050608;
+    --void-primary: #0a0c10;
+    --void-elevated: #11141a;
+    --void-card: #1a1f28;
     
     /* Gold Leaf - precious, luminous */
-    --gold-leaf: #d4af37;          /* Primary gold */
-    --gold-light: #f4d06f;         /* Highlight */
-    --gold-dark: #8b7322;          /* Shadow */
+    --gold-primary: #d4af37;
+    --gold-light: #e8c85a;
+    --gold-muted: rgba(212, 175, 55, 0.15);
     
-    /* Jade - life, wisdom, growth */
-    --jade-primary: #5d9c59;       /* Primary jade */
-    --jade-light: #7cb879;         /* Light jade */
-    --jade-dark: #3d6b3a;          /* Dark jade */
+    /* Jade - wisdom, growth, life */
+    --jade-primary: #5d9c59;
+    --jade-light: #7cb879;
+    --jade-muted: rgba(93, 156, 89, 0.1);
     
-    /* Ink Wash - layered depth */
-    --ink-light: #6b7280;          /* Mist gray */
-    --ink-medium: #4b5563;         /* Mid-tone ink */
-    --ink-dark: #1f2937;           /* Deep ink */
-    
-    /* Paper/Illumination */
-    --paper-white: #e5e7eb;        /* Soft white */
-    --paper-warm: #f3f4f6;         /* Warm paper */
+    /* Text Colors */
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-tertiary: #6b7280;
     
     /* Typography */
     --font-serif: 'Noto Serif', serif;
-    --font-sans: 'Nunito', sans-serif;
+    --font-sans: 'Inter', sans-serif;
     
-    /* Spacing & sizing */
-    --border-radius-card: 12px;
-    --border-radius-circle: 50%;
-    --spacing-unit: 8px;
+    /* Spacing System */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
     
-    /* Animation timing - slow, meditative */
-    --transition-slow: cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-ease: ease;
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+    
+    /* Transitions - refined, professional */
+    --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
 }
 
 /* ================================================================
-   B A S E   S T Y L E S
+   R E S E T   &   B A S E
 ================================================================ */
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -76,539 +85,609 @@ TYPOGRAPHY:
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     font-family: var(--font-sans);
-    color: var(--paper-white);
-    line-height: 1.75;
+    color: var(--text-primary);
+    background-color: var(--void-primary);
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    background: var(--void-800);
     min-height: 100vh;
     position: relative;
 }
 
-/* Subtle grain texture overlay for paper-like feel */
-body::before {
-    content: '';
+/* Ambient noise texture for subtle paper-like quality */
+.noise-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    inset: 0;
     pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
+/* Selection styling */
 ::selection {
-    background: rgba(212, 175, 55, 0.3);
-    color: var(--paper-white);
+    background-color: var(--gold-muted);
+    color: var(--text-primary);
 }
 
+/* Link defaults */
 a {
-    color: var(--gold-light);
+    color: inherit;
     text-decoration: none;
-    transition: color 0.3s var(--transition-slow);
-}
-
-a:hover {
-    color: var(--paper-white);
+    transition: color var(--duration-normal) var(--ease-out);
 }
 
 /* ================================================================
-   T Y P O G R A P H Y
+   A M B I E N T   V O I D   B A C K G R O U N D
+   Subtle mist layers that drift slowly
 ================================================================ */
-.display {
-    font-family: var(--font-serif);
-    font-weight: 600;
-    letter-spacing: -0.02em;
+.ambient-void {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-.container {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding-inline: clamp(1rem, 4vw, 2rem);
-}
-
-.section {
-    padding-block: clamp(3rem, 6vw, 5rem);
-}
-
-/* ================================================================
-   A M B I E N T   E F F E C T S
-   Mist layers and subtle glows
-================================================================ */
 .mist-layer {
     position: absolute;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
-.mist-1 {
-    background: radial-gradient(ellipse at 50% 30%, rgba(93, 156, 89, 0.08) 0%, transparent 60%);
-    animation: drift 20s ease-in-out infinite;
+.mist-jade {
+    background: radial-gradient(ellipse at 30% 20%, var(--jade-muted) 0%, transparent 50%);
+    animation: drift-slow 30s ease-in-out infinite;
 }
 
-.mist-2 {
-    background: radial-gradient(ellipse at 80% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
-    animation: drift 25s ease-in-out infinite reverse;
+.mist-gold {
+    background: radial-gradient(ellipse at 70% 80%, var(--gold-muted) 0%, transparent 50%);
+    animation: drift-slow 35s ease-in-out infinite reverse;
 }
 
-@keyframes drift {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    50% { transform: translateX(-2%) translateY(-3%); }
+@keyframes drift-slow {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-2%, -3%) scale(1.02); }
+    66% { transform: translate(2%, -2%) scale(0.98); }
 }
 
 /* ================================================================
-   H E A D E R   -   V O I D   W I T H   G O L D
+   H E A D E R   -   M I N I M A L I S T
+   Clean, spacious, professional
 ================================================================ */
-.void-header {
+.site-header {
     position: relative;
-    background: linear-gradient(180deg, var(--void-700) 0%, var(--void-800) 100%);
-    padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 3) calc(var(--spacing-unit) * 5);
+    padding: var(--space-3xl) var(--space-lg) var(--space-2xl);
     text-align: center;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
 
-.header-content {
-    position: relative;
-    z-index: 1;
-    max-width: 700px;
+.header-inner {
+    max-width: 900px;
     margin: 0 auto;
 }
 
-/* Headshot container with golden ring */
-.headshot-container {
+.brand-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+/* Portrait frame with subtle golden accent */
+.portrait-frame {
     position: relative;
     display: inline-block;
-    margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
-.golden-ring {
-    position: absolute;
-    inset: -8px;
-    border-radius: 50%;
-    border: 2px solid rgba(212, 175, 55, 0.4);
-    animation: rotate 30s linear infinite;
-}
-
-.golden-ring::before {
+.portrait-frame::after {
     content: '';
     position: absolute;
-    inset: -4px;
+    inset: -6px;
     border-radius: 50%;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    animation: rotate 20s linear infinite reverse;
+    border: 1px solid var(--gold-muted);
+    animation: rotate-slow 40s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes rotate-slow {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-.headshot {
-    width: 160px;
-    height: 160px;
+.portrait {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    transition: transform 0.5s var(--transition-slow);
-    position: relative;
-    z-index: 1;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    transition: transform var(--duration-slow) var(--ease-out);
 }
 
-.headshot:hover {
+.portrait:hover {
     transform: scale(1.03);
 }
 
-.main-title {
+/* Title block */
+.title-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.site-title {
     font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 600;
-    color: var(--paper-white);
-    margin-bottom: calc(var(--spacing-unit) * 2);
-    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
+    gap: var(--space-md);
 }
 
-.chinese-char {
-    font-size: 0.7em;
-    color: var(--gold-leaf);
-    opacity: 0.9;
+.chinese-character {
+    font-size: 0.65em;
+    color: var(--gold-primary);
     font-style: italic;
+    opacity: 0.9;
 }
 
-.headline {
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
-    color: var(--ink-light);
-    font-weight: 300;
-    line-height: 2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.verse-line {
-    display: inline-block;
-}
-
-.verse-divider {
-    color: var(--gold-leaf);
-    opacity: 0.6;
+.tagline {
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    color: var(--text-secondary);
+    font-weight: 400;
+    letter-spacing: 0.05em;
 }
 
 /* ================================================================
-   N A V I G A T I O N   -   I N K   W A S H
+   N A V I G A T I O N   -   F L O A T I N G   P I L L
+   Ink-wash aesthetic with jade hover states
 ================================================================ */
-.navbar-void {
+.floating-nav {
     position: sticky;
-    top: 0;
+    top: var(--space-md);
     z-index: 100;
-    background: rgba(10, 12, 16, 0.9);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: calc(var(--spacing-unit) * 2) 0;
-}
-
-.nav-items {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: calc(var(--spacing-unit) * 3);
-    list-style: none;
-    padding: 0 calc(var(--spacing-unit) * 3);
+    padding: 0 var(--space-md);
 }
 
-.nav-item {
-    position: relative;
+.nav-list {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(10, 12, 16, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-full);
+    list-style: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 .nav-link {
-    display: inline-block;
-    padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
     font-family: var(--font-sans);
-    font-weight: 400;
-    font-size: 0.95rem;
-    color: var(--ink-light);
-    transition: all 0.3s var(--transition-slow);
-    position: relative;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    transition: all var(--duration-normal) var(--ease-out);
     min-height: 44px;
     min-width: 44px;
-    display: flex;
-    align-items: center;
     justify-content: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 2px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
     height: 1px;
-    background: var(--gold-leaf);
-    transition: width 0.3s var(--transition-slow);
-}
-
-.nav-link:hover {
-    color: var(--paper-white);
+    background: var(--gold-primary);
+    transition: width var(--duration-normal) var(--ease-out);
 }
 
 .nav-link:hover::after {
-    width: 80%;
+    width: 60%;
 }
 
 /* ================================================================
-   M A I N   C O N T E N T
+   M A I N   C O N T E N T   F L O W
+   Vertical rhythm with generous whitespace
 ================================================================ */
-.main-content {
-    max-width: 760px;
+.content-flow {
+    max-width: 720px;
     margin: 0 auto;
-    padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 3);
+    padding: var(--space-3xl) var(--space-lg);
     display: flex;
     flex-direction: column;
-    gap: calc(var(--spacing-unit) * 5);
+    gap: var(--space-3xl);
+}
+
+.content-wrapper {
+    width: 100%;
+}
+
+/* Scroll reveal animation */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity var(--duration-slow) var(--ease-out),
+                transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ================================================================
-   V O I D   C A R D   C O M P O N E N T
-   Minimal, contemplative cards
+   I N T R O   S E C T I O N
+   Sparse, impactful greeting
 ================================================================ */
-.void-card {
-    background: rgba(26, 31, 40, 0.5);
-    border-radius: var(--border-radius-card);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: calc(var(--spacing-unit) * 5);
-    transition: all 0.4s var(--transition-slow);
+.intro-section {
+    text-align: center;
+    padding: var(--space-2xl) 0;
+}
+
+.greeting {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+    margin-bottom: var(--space-md);
+}
+
+.intro-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+/* ================================================================
+   P R O S E   S E C T I O N   -   P O E T I C   L A Y O U T
+   Contemplative verse formatting
+================================================================ */
+.prose-section {
+    padding: var(--space-xl) 0;
+}
+
+.prose-card {
+    padding: var(--space-xl);
+    background: rgba(26, 31, 40, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-lg);
     position: relative;
     overflow: hidden;
 }
 
-.void-card::before {
+.prose-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, var(--gold-muted), transparent);
 }
 
-.void-card:hover {
-    border-color: rgba(212, 175, 55, 0.15);
-    transform: translateY(-2px);
-}
-
-/* Scroll reveal animation */
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s var(--transition-slow), transform 0.6s var(--transition-slow);
-}
-
-.scroll-reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ================================================================
-   W E L C O M E   S E C T I O N
-================================================================ */
-.welcome-title {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-align: center;
-    color: var(--paper-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.poetic-symbol {
-    color: var(--gold-leaf);
-    opacity: 0.7;
-    font-size: 1.2rem;
-}
-
-/* ================================================================
-   A B O U T   S E C T I O N   -   P R O S E   P O E T R Y
-================================================================ */
-.about-heading {
-    font-family: var(--font-serif);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--paper-white);
-    margin-bottom: calc(var(--spacing-unit) * 3);
-    text-align: center;
-    line-height: 1.4;
-}
-
-.prose-verse {
+.verse-line {
     font-size: 1.05rem;
-    color: var(--ink-light);
-    margin-bottom: calc(var(--spacing-unit) * 2);
-    line-height: 2;
+    color: var(--text-secondary);
     font-weight: 300;
+    line-height: 2.2;
+    margin-bottom: 0;
 }
 
-.poetry-note {
-    margin-top: calc(var(--spacing-unit) * 4);
-    padding: calc(var(--spacing-unit) * 3);
-    border-left: 2px solid var(--gold-leaf);
-    background: linear-gradient(90deg, rgba(212, 175, 55, 0.05), transparent);
+.verse-line-spacer {
+    height: var(--space-lg);
 }
 
-.verse-italic {
+/* Poetry accent box */
+.poetry-accent {
+    margin-top: var(--space-2xl);
+    padding: var(--space-lg);
+    border-left: 2px solid var(--gold-primary);
+    background: linear-gradient(90deg, var(--gold-muted), transparent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.italic-note {
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--ink-light);
+    color: var(--text-tertiary);
     line-height: 2;
-    font-size: 1rem;
+    font-size: 0.95rem;
+}
+
+.subtle-smile {
+    opacity: 0.8;
+    font-weight: 400;
 }
 
 /* ================================================================
-   L I V I N G   C O U N T E R   -   T I M E   F L O W S
+   L I V I N G   C O U N T E R   -   C E N T R A L   F E A T U R E
+   Breathing golden orbit with ticking seconds
 ================================================================ */
 .counter-section {
     text-align: center;
+    padding: var(--space-2xl) 0;
 }
 
-.counter-heading {
-    font-family: var(--font-serif);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--paper-white);
-    margin-bottom: calc(var(--spacing-unit) * 2);
-}
-
-.counter-description {
-    color: var(--ink-light);
-    margin-bottom: calc(var(--spacing-unit) * 4);
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
-
-.living-counter {
-    display: inline-flex;
+.counter-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: calc(var(--spacing-unit) * 2);
-    margin-bottom: calc(var(--spacing-unit) * 3);
+    gap: var(--space-xl);
 }
 
-.counter-ring {
+/* Golden orbit rings */
+.golden-orbit {
     position: relative;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    width: 160px;
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
-    animation: breathe 4s ease-in-out infinite;
 }
 
-@keyframes breathe {
+.orbit-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--gold-muted);
+    animation: breathe-slow 5s ease-in-out infinite;
+}
+
+.ring-outer {
+    width: 100%;
+    height: 100%;
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.ring-inner {
+    width: 85%;
+    height: 85%;
+    border-color: rgba(212, 175, 55, 0.35);
+    animation-delay: -1s;
+}
+
+@keyframes breathe-slow {
     0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.02); opacity: 0.9; }
+    50% { transform: scale(1.03); opacity: 0.85; }
 }
 
-.counter-number {
+/* Counter display */
+.counter-display {
+    position: relative;
+    z-index: 1;
+}
+
+.seconds-number {
     font-family: var(--font-sans);
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 300;
-    color: var(--gold-leaf);
+    color: var(--gold-primary);
     font-variant-numeric: tabular-nums;
     letter-spacing: -1px;
-}
-
-.counter-label {
-    color: var(--ink-light);
-    font-size: 0.9rem;
-    font-weight: 300;
-    text-transform: lowercase;
-    letter-spacing: 0.1em;
+    display: block;
 }
 
 .counter-message {
-    color: var(--ink-light);
-    font-size: 0.95rem;
-    font-style: italic;
-    opacity: 0.8;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.highlight-number {
+    color: var(--gold-primary);
+    font-weight: 500;
 }
 
 /* ================================================================
-   C O N T A C T   S E C T I O N
+   C O N T A C T   S E C T I O N   -   M I N I M A L I S T
+   Clean cards with subtle interactions
 ================================================================ */
+.contact-section {
+    padding: var(--space-2xl) 0 var(--space-3xl);
+}
+
 .contact-heading {
     font-family: var(--font-serif);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--paper-white);
+    color: var(--text-primary);
     text-align: center;
-    margin-bottom: calc(var(--spacing-unit) * 3);
+    margin-bottom: var(--space-xl);
 }
 
-.contact-links {
+.contact-methods {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 640px) {
+    .contact-methods {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.contact-card {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--spacing-unit) * 2);
-    margin-bottom: calc(var(--spacing-unit) * 4);
+    align-items: center;
+    padding: var(--space-lg);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-lg);
+    transition: all var(--duration-normal) var(--ease-out);
+    min-height: 100px;
+    justify-content: center;
+    gap: var(--space-xs);
 }
 
-.contact-link {
-    display: block;
-    padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
+.contact-card:hover {
+    border-color: var(--gold-muted);
     background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--border-radius-card);
-    text-align: center;
-    color: var(--paper-white);
+    transform: translateY(-2px);
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-tertiary);
+}
+
+.contact-value {
+    font-size: 1rem;
+    color: var(--text-primary);
     font-weight: 400;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.3s var(--transition-slow);
-    min-height: 48px;
-    display: flex;
+}
+
+/* CTA Button */
+.cta-wrapper {
+    text-align: center;
+}
+
+.primary-cta {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-}
-
-.contact-link:hover {
-    border-color: rgba(212, 175, 55, 0.3);
-    background: rgba(212, 175, 55, 0.05);
-    transform: translateY(-2px);
-}
-
-/* CTA Button - Gold Leaf */
-.button-container {
-    text-align: center;
-}
-
-.cta-button {
-    background: linear-gradient(135deg, var(--gold-leaf) 0%, var(--gold-dark) 100%);
-    color: var(--void-900);
+    padding: var(--space-md) var(--space-2xl);
+    background: linear-gradient(135deg, var(--gold-primary) 0%, #b89628 100%);
+    color: var(--void-deep);
     border: none;
-    border-radius: var(--border-radius-card);
-    padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
+    border-radius: var(--radius-full);
+    font-family: var(--font-sans);
     font-size: 1rem;
     font-weight: 600;
-    font-family: var(--font-sans);
     cursor: pointer;
-    transition: all 0.3s var(--transition-slow);
-    min-height: 48px;
-    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+    transition: all var(--duration-normal) var(--ease-out);
+    min-height: 52px;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
 }
 
-.cta-button:hover {
+.primary-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 6px 28px rgba(212, 175, 55, 0.35);
 }
 
-.cta-button:active {
+.primary-cta:active {
     transform: translateY(0);
 }
 
 /* ================================================================
-   F O O T E R
+   F O O T E R   -   S I M P L E   C L O S I N G
 ================================================================ */
-.void-footer {
-    background: var(--void-900);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: calc(var(--spacing-unit) * 5);
+.site-footer {
+    background: var(--void-deep);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: var(--space-2xl) var(--space-lg);
     text-align: center;
-    color: var(--ink-light);
+    color: var(--text-tertiary);
     font-size: 0.85rem;
     font-weight: 300;
 }
 
 /* ================================================================
    M O B I L E   R E S P O N S I V E N E S S
+   Flawless on all screen sizes
 ================================================================ */
 @media (max-width: 768px) {
-    .main-title {
-        font-size: 2rem;
+    :root {
+        font-size: 15px;
     }
     
-    .headline {
-        font-size: 0.9rem;
-        flex-direction: column;
+    .site-header {
+        padding: var(--space-2xl) var(--space-md) var(--space-xl);
+    }
+    
+    .portrait {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .nav-list {
+        padding: var(--space-xs) var(--space-sm);
+        gap: 2px;
+    }
+    
+    .nav-link {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 0.85rem;
+    }
+    
+    .content-flow {
+        padding: var(--space-2xl) var(--space-md);
+        gap: var(--space-2xl);
+    }
+    
+    .prose-card {
+        padding: var(--space-lg);
+    }
+    
+    .seconds-number {
+        font-size: 2.2rem;
+    }
+    
+    .golden-orbit {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --gold-muted: rgba(212, 175, 55, 0.4);
+        --text-secondary: #d1d5db;
+    }
+}rection: column;
         gap: 0.25rem;
     }
     
