@@ -1,4 +1,15 @@
-```
+```gitignore
+# Compiled and binary files
+*.pyc
+*.class
+*.o
+*.obj
+*.out
+*.exe
+*.dll
+*.so
+*.a
+
 # Dependencies
 node_modules/
 # Environment
