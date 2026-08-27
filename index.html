@@ -1,220 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bee · Under Construction — beechain.xyz</title>
-  <meta name="description" content="A new digital presence is being crafted. Returning soon." />
-  <meta name="theme-color" content="#050608" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --void-900: #050608;
-      --void-800: #0a0c10;
-      --gold-leaf: #d4af37;
-      --gold-dim: #8a7020;
-      --jade-mist: #5d9c59;
-      --ink-primary: #e5e7eb;
-      --ink-secondary: #9ca3af;
-      --ink-muted: #6b7280;
-      --font-display: 'Noto Serif', serif;
-      --font-body: 'Nunito', sans-serif;
-      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: var(--font-body);
-      background: radial-gradient(circle at 50% 0%, #1a1f28 0%, var(--void-900) 60%),
-                  radial-gradient(circle at 80% 20%, rgba(93, 156, 89, 0.08) 0%, transparent 40%),
-                  radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 40%);
-      background-color: var(--void-900);
-      color: var(--ink-primary);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      position: relative;
-    }
-    .mist {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.15;
-      pointer-events: none;
-      animation: drift 20s ease-in-out infinite;
-    }
-    .mist-1 {
-      top: -10%; right: -10%;
-      width: 50vw; height: 50vw;
-      background: radial-gradient(circle, var(--jade-mist) 0%, transparent 70%);
-    }
-    .mist-2 {
-      bottom: -10%; left: -10%;
-      width: 60vw; height: 60vw;
-      background: radial-gradient(circle, var(--gold-leaf) 0%, transparent 70%);
-      animation-delay: -5s;
-      animation-direction: reverse;
-    }
-    @keyframes drift {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(2%, 3%) scale(1.05); }
-      66% { transform: translate(-1%, 2%) scale(0.95); }
-    }
-    .container {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
-      padding: 2rem;
-    }
-    .ring-container {
-      position: relative;
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid transparent;
-      border-top-color: var(--gold-leaf);
-      border-right-color: var(--gold-dim);
-      opacity: 0.6;
-      animation: spin linear infinite;
-    }
-    .ring-outer {
-      width: 100%; height: 100%;
-      border-width: 1px;
-      animation-duration: 30s;
-    }
-    .ring-inner {
-      width: 70%; height: 70%;
-      border-width: 2px;
-      border-top-color: var(--jade-mist);
-      border-right-color: var(--jade-mist);
-      animation-duration: 20s;
-      animation-direction: reverse;
-      opacity: 0.8;
-    }
-    .ring-center {
-      width: 40%; height: 40%;
-      border-width: 1px;
-      border-color: rgba(212, 175, 55, 0.3);
-      animation-duration: 15s;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--ink-primary);
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-    }
-    .subtitle {
-      font-size: clamp(1.1rem, 2.5vw, 1.25rem);
-      color: var(--ink-secondary);
-      font-weight: 400;
-      line-height: 1.7;
-      max-width: 28rem;
-      margin: 0 auto 2.5rem;
-    }
-    .divider {
-      width: 60px; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold-leaf), transparent);
-      margin: 0 auto 2.5rem;
-      opacity: 0.6;
-    }
-    .message {
-      font-size: 1rem;
-      color: var(--ink-muted);
-      font-style: italic;
-      margin-bottom: 3rem;
-    }
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--gold-leaf);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.75rem 1.5rem;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      border-radius: 999px;
-      transition: all 0.3s var(--ease-out);
-      background: rgba(212, 175, 55, 0.05);
-    }
-    .contact-link:hover {
-      background: rgba(212, 175, 55, 0.1);
-      border-color: var(--gold-leaf);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.3);
-    }
-    footer {
-      position: absolute;
-      bottom: 2rem;
-      font-size: 0.85rem;
-      color: var(--ink-muted);
-      font-weight: 600;
-    }
-    footer a {
-      color: var(--ink-secondary);
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: var(--gold-leaf);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-    @media (max-width: 640px) {
-      .container { padding: 1.5rem; }
-      .ring-container { width: 150px; height: 150px; margin-bottom: 2rem; }
-    }
-  </style>
-</head>
-<body>
-  <div class="mist mist-1" aria-hidden="true"></div>
-  <div class="mist mist-2" aria-hidden="true"></div>
-  <div class="container">
-    <div class="ring-container">
-      <div class="ring ring-outer"></div>
-      <div class="ring ring-inner"></div>
-      <div class="ring ring-center"></div>
-    </div>
-    <h1>Under Construction</h1>
-    <div class="divider"></div>
-    <p class="subtitle">
-      A new digital presence is being crafted.<br />
-      Returning soon with clarity, purpose, and grace.
-    </p>
-    <p class="message">"In the void, all things are possible."</p>
-    <a href="https://www.linkedin.com/in/beechain/" target="_blank" rel="noopener noreferrer" class="contact-link">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-      </svg>
-      Connect on LinkedIn
-    </a>
-  </div>
-  <footer>
-    <p>&copy; <span id="year">2026</span> Bee · <a href="https://beechain.xyz">beechain.xyz</a></p>
-  </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bee Brower crafts thoughtful experiences, communities, and growth." />
+    <meta name="theme-color" content="#141411" />
+    <title>Bee Brower — Experiences, Community & Growth</title>
+    <link rel="icon" href="imgs/favicon.jfif" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Bee Brower, home">Bee Brower</a>
+      <nav aria-label="Primary navigation">
+        <a href="#approach">Approach</a>
+        <a href="Bee%20Brower%20Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+        <a href="mailto:bebrower@gmail.com">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero" aria-labelledby="intro-heading">
+        <div class="hero-copy">
+          <p class="eyebrow">Experiences · community · growth</p>
+          <h1 id="intro-heading">Bee<br />Brower</h1>
+          <p class="rotating-line">I’m a <span id="role" aria-live="polite">community builder</span><span class="cursor" aria-hidden="true">_</span><br />who crafts experiences people remember.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:bebrower@gmail.com">Contact <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="Bee%20Brower%20Resume.pdf" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-location">Los Gatos, California <span>/ Available globally</span></p>
+        </div>
+        <div class="portrait-stage" aria-label="Reserved space for Bee Brower headshot">
+          <div class="portrait-placeholder"><span>Headshot<br />forthcoming</span></div>
+        </div>
+      </section>
+      <section class="principles principles-dark" id="approach" aria-label="Working principles">
+        <article><p class="principle-index">01 / ◉</p><h2>Make people feel expected.</h2><p>Careful hospitality turns an audience into a community.</p></article>
+        <article><p class="principle-index">02 / ✦</p><h2>Let the signal travel.</h2><p>Field work becomes growth when each moment has an afterlife.</p></article>
+        <article><p class="principle-index">03 / ↗</p><h2>Leave room for wonder.</h2><p>The memorable details are often the quietest ones.</p></article>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-top">
+        <p id="thanks" aria-live="polite">You've been here for 0 curious seconds. Thank you for every one.</p>
+        <div class="footer-links"><a href="mailto:bebrower@gmail.com">Email</a><a href="https://www.linkedin.com/in/beechain/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/beechainfullstack" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+      <div class="footer-bottom"><p>© <span id="year"></span> Bee Brower</p></div>
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
 </html>
