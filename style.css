@@ -56,7 +56,10 @@ h1 { margin: 22px 0 20px; color: var(--blue-dark); font: 700 clamp(66px, 9vw, 12
 .principles-dark article { position: relative; z-index: 1; min-height: 276px; padding: 20px; display: flex; flex-direction: column; border: 1px solid #416b8c; background: linear-gradient(145deg, rgba(29, 68, 103, .78), rgba(3, 18, 34, .88)); box-shadow: inset 1px 1px rgba(255,255,255,.12), 4px 5px 7px rgba(0, 0, 0, .25); }
 .principle-index { margin: 0; color: var(--green); font: 700 10px/1 var(--mono); letter-spacing: .07em; }
 .principles h2 { margin: auto 0 14px; color: #f5fafe; font: 700 clamp(23px, 2.25vw, 31px)/1.04 var(--sans); letter-spacing: -.05em; text-shadow: 1px 2px rgba(0,0,0,.5); }
-.principles article > p:last-child { margin: 0; padding: 13px; color: #d9e8f3; border: 1px solid #426889; background: rgba(3, 18, 34, .55); box-shadow: inset 1px 1px 2px rgba(0,0,0,.22); font-size: 13px; line-height: 1.5; }
+.principles h2.principles-section-title { grid-column: 1 / -1; margin: 0 0 24px; color: #f5fafe; text-align: center; font: 700 clamp(32px, 4vw, 52px)/1 var(--sans); letter-spacing: -.05em; text-shadow: 1px 2px rgba(0,0,0,.5); }
+.principles article .principle-list { margin: 0; padding: 13px 13px 13px 26px; color: #d9e8f3; border: 1px solid #426889; background: rgba(3, 18, 34, .55); box-shadow: inset 1px 1px 2px rgba(0,0,0,.22); font-size: 13px; line-height: 1.5; }
+.principles article .principle-list li { margin: 0 0 6px 0; list-style-type: disc; }
+.principles article .principle-list li:last-child { margin-bottom: 0; }
 
 footer { padding: 0 clamp(24px, 5vw, 72px) 24px; background: linear-gradient(#c2cbd3, #abb6c0); }
 .footer-top { padding: clamp(50px, 7vw, 82px) 0 clamp(38px, 5vw, 62px); display: flex; flex-direction: column; align-items: center; gap: 26px; border-top: 2px solid #fff; text-align: center; }
