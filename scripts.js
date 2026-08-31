@@ -1,9 +1,9 @@
 const roles = [
-  "community builder",
-  "experience maker",
-  "creative strategist",
+  "creative architect",  
+  "product strategist",
+  "experience director",
   "growth operator",
-  "host"
+  "community weaver"
 ];
 
 const role = document.getElementById("role");
